@@ -1,12 +1,12 @@
 ## Agenda
 
-- History Of AI
-- What is Artificial Intelligence ?
-- AI Applications
-- Types of AI
-- Programming Languages for AI
-- Machine Learning
-- Machine Learning Algorithms
+- [History Of AI](#History-Of-AI)
+- [What is Artificial Intelligence ?](#What-is-Artificial-Intelligence-?)
+- [AI Applications](#AI-Applications)
+- [Types of AI](#Types-Of-AI)
+- [Programming Languages for AI](#Programming-Languages-For-AI)
+- [Machine Learning](#Introduction-to-Machine-Learning)
+- [Machine Learning Algorithms](#Types-Of-Machine-Learning)
 - Limitations of Machine Learning
 - Deep Learning
 - Neural Networks
