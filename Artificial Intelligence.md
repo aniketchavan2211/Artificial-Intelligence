@@ -202,8 +202,6 @@ Steps to follow:
 **Machine Learning Process**
 > The Machine Learning process involves building a **Predictive model** that can be used to find a **solution** for **Problem Statement**.
 
-==Explain with an Example:==
-
 **Step 1: Define the objective of the Problem**
 > To predict the possibility of rain by studying the weather conditions.
 
@@ -282,6 +280,339 @@ In Reinforcement Learning , we don't give data, we put Agent AI, in a environmen
 | Training           | External supervision                                                     | No supervision                                                  | No supervision                                                                              |
 | Approch            | Map labelled input to known output                                       | Understand patterns and discovers output                        | Follow trail and error method                                                               |
 | Popular Algorithms | Linear regression, Logistic regression, Support Vector Machine, KNN, etc | K-means, C-means, etc                                           | Q-learning, SARSA, etc                                                                      |
+
+## Types of Problems Solved Using Machine Learning
+
+**Regression vs Classification vs Clustering**
+
+| Regression                         | Classification                                  | Clustering                                               |
+| ---------------------------------- | ----------------------------------------------- | -------------------------------------------------------- |
+| Supervised Learning                | Supervised Learning                             | Unsupervised Learning                                    |
+| Output is continuous quantity      | Output a categorical quantity                   | Assigns data points into clusters                        |
+| Main aim is to forecast or predict | Main aim is to compute the category of the data | Main aim is to group similar items clusters              |
+| Eg. Predict  stock market price    | Eg. Classify emails as spam or non-spam         | Eg. Find all transactions which are fraudulent in nature |
+| Algorithm: Linear Regression       | Algorithm: Logistic Regression                  | Algorithm: K-means                                       |
+
+**Problem Statement**: To study the House Sales dataset and build a Machine Learning model that  predicts the house pricing index. : 
+> Linear Regression Algorithm to predict the house pricing index. 
+
+
+**Problem Statement**: Study a bank credit dataset and make a decision about whether to approve the loan of an applicant based on profile. :
+> KNN Algorithm - Approve Loan OR  Reject Loan
+
+**Problem Statement**: To cluster a set of movies as either good or average based on their social media out reach. :
+> K-means Algorithm - Popular Movies OR Non-popular Movies
+
+### Supervised Learning Algorithms
+
+- Linear Regression
+- Logistic Regression
+- Decision Tree
+- Random Forest
+- Naive Bayes Classifier
+- K-Nearest Neighbour
+- Support Vector Machines
+
+#### Linear Regression 
+
+![linear-regression-graph](assets/images/linear-regression-graph.png)
+
+Linear Regression is a method to predict dependent variable (Y) based on values of independent variables (X). It can be used for the cases where we want to predict some continuous quantity.
+
+- Dependent variable (Y):
+>  The response variable who's value needs to be predicted.
+
+- Independent variable (X):
+> The predictor variable used to predict the response variable.
+
+
+The following equation is used to represent a linear regression model:
+
+![](assets/images/linear-regression-equation.png)
+
+1. Dependent variable
+2. Y intercept
+3. Slope
+4. Independent variable
+5. Error
+
+![](assets/images/linear-regression-graph-w-eqn.png)
+
+#### Logistic Regression
+
+![logistic-regression-graph](assets/images/logistic-regression-graph.png)
+
+Logistic Regression is a method used to predict a dependent variable, given a set of independent variables, such that the dependent variable is categorical.
+
+![logistic-regression-graph-with-equation](assets/images/logistic-regression-graph-w-eqn.png)
+
+![Sigmoid Function](assets/images/sigmoid-function.png)
+
+#### Decision Tree
+
+A Decision Tree is a Supervised Machine Learning algorithm which looks like an inverted tree, wherein each node represents a **predictor variable** (feature), link between the nodes represents a **Decision** and each leaf node represents an **outcome** (response variable).
+
+![Decision Tree Example](assets/images/decision-tree-example.png)
+
+**Root Node**: 
+> The root node is the starting point of a tree. At this point, the first split is performed.
+
+**Internal Node**:
+> Each internal node represents a decision point (predictor variable) that eventually leads to the prediction of the outcome.
+
+**Leaf / Terminal Node**:
+> Leaf nodes represents the final class of the outcome and therefore they're also called terminating nodes.
+
+**Branches**:
+> Branches are connection between nodes, they're represented as arrows. Each branch represents a response such as yes or no.
+
+
+**Steps to Follows:**
+
+**Step 1**: Select ***Best Attributes ( A )***
+
+**Step 2**: Assign A as decision variable for the root node.
+
+**Step 3**: For each value of A, build a descendant of the node.
+
+**Step 4**: Assign classification labels to the leaf node.
+
+**Step 5**: If data is correctly classified: Stop.
+
+**Step 6**: Else: Iterate over the tree.
+
+**Information Gain & Entropy**
+
+**Problem Statement**: To study the data set and create a Decision Tree that classifies the speed of a car as either slow or fast.
+
+| Road type | Obstruction | Speed Limit | Speed |
+| --------- | ----------- | ----------- | ----- |
+| steep     | yes         | yes         | slow  |
+| steep     | no          | yes         | slow  |
+| flat      | yes         | no          | fast  |
+| steep     | no          | no          | fast  |
+
+**Step 1**:  Select Best Attributes (A)
+
+Q. How do you know which variable best separates the data?
+Ans. : The variable with the highest information Gain best divides the data into the desired output classes.
+
+Calculate the following measures:
+1. Entropy
+2. Information Gain ( IG )
+
+**Entropy**: Entropy measures the impurity or uncertainty present in the data.
+
+**Information Gain**: IG indicates how much "information" a particular feature / variable gives us about the final outcome.
+
+**Calculating IG of parent node ( Speed of Car )**
+
+Find out the fraction of the two classess (slow or fast) present in the parent node:
+- P(slow) -> fraction of  'slow' outcomes in the parent node
+- P(fast) -> fraction of 'fast' outcomes in the parent node
+
+The formula of calculate P(slow) is:
+**P(slow) = no. of 'slow' outcomes in the parent node / total number of outcomes**
+
+P(slow) = 2/4 = 0.5
+
+Similarly for P(fast),
+
+**P(fast) = no. of 'fast' outcomes in the parent node / total number of outcomes**
+
+P(fast) = 2/4 = 0.5
+
+Therefore, the entropy of the parent node is:
+**Entropy(parent) = ...**
+Entropy(parent) = 1
+
+
+Calculating IG of child node (Road Type)
+
+Entropy of right side child node(fast)
+Entropy of left side child node (slow, slow , fast)
+
+P(slow) = 2/3 = 0.667
+P(fast) = 1/3 = 0.334
+
+Therefore, the entropy is:
+Entropy(left child node) = {(0.667 log2(0.667)) + 0.334 log2(0.334)} = -{-0.38+(-0.52))} = 0.9
+
+calculate the Entropy (children) with weighted average:
+- Total number of outcomes in parent node: 4
+- Total number of outcomes in left child node: 3
+- Total number of outcomes in right child node: 1
+
+> \[Weighted avg]Entropy(children) = (no. of outcomes in left child node) / (total no. of outcomes in parent node) + (entropy of left node) + (no. of outcomes in right child node) / (total no. of outcomes in parent node) * (entropy of right node)
+
+Entropy(children) with weighted avg. is 0.675
+
+**`Information Gain = entropy(parent) - [weighted average] * entropy(children)`**
+
+Therefore, 
+Information Gain(Road type) = 1 - 0.675 = 0.325
+
+So by using the above methodology, you must get the following values for each predictor variable:
+- Information Gain (Road type) = 1 - 0.675 = 0.325
+- Information Gain (Obstruction) = 1 - 1 = 0
+- Information Gain (Speed limit) = 1 - 0 = 1 
+
+#### Random Forest 
+
+![Random Forest](assets/images/random-forest.png)
+
+Random Forest builds multiple decision trees (called the forest) and glues them together to get a more accurate and stable prediction.
+
+Why Random Forest ?
+- More Accuracy
+- Avoid Overfitting
+- Bagging
+
+We're going to use this data set to create a Random Forest that predicts if a person has heart disease or not.
+
+
+| Blood Flow | Blocked Arteries | Chest Pain | Weight | Heart Disease |
+| ---------- | ---------------- | ---------- | ------ | ------------- |
+| Abnormal   | No               | No         | 130    | No            |
+| Normal     | Yes              | Yes        | 195    | Yes           |
+| Normal     | No               | Yes        | 218    | No            |
+| Abnormal   | Yes              | Yes        | 180    | Yes           |
+
+**Step 1**: Create a Bootstrapped Data Set
+Bootstrapping is an estimation method used to make prediction on a data set by re-sampling it.
+
+| Blood Flow | Blocked Arteries | Chest Pain | Weight | Heart Disease |
+| ---------- | ---------------- | ---------- | ------ | ------------- |
+| Abnormal   | Yes              | Yes        | 195    | Yes           |
+| Abnormal   | No               | No         | 130    | No            |
+| Abnormal   | Yes              | Yes        | 180    | Yes           |
+| Abnormal   | Yes              | Yes        | 180    | Yes           |
+
+**Step 2**: Creating Decision Trees
+
+- Build a Decision Tree by using the bootstrapped data set
+- Begin at the root node & choose the best attribute to split the data set
+- Repeat the same process for each of the upcoming branch nodes
+
+**Step 3**: Go back to Step 1 and Repeat
+
+- Each Decision Tree predicts the output class based on the respective predictor variables used in that tree.
+- Go back to step 1, create a new bootstrapped data set and then build a Decision Tree by considering only a subset of variables at each step.
+- This iteration is performed 100's of times, creating multiple decision trees.
+
+**Step 4**: Predicting the outcome of a new data point
+
+- To predict whether a new patient has heart disease or not, run the new data down the decision trees
+- After running the data down all the trees in the Random Forest, we check which glass got the majority votes.
+- In our case, the class 'Yes' received the most number of votes, hence it's clear that the new patient has heart disease.
+
+**Step 5**: Evaluate the Model
+
+- In a real-world problem, about 1/3rd of the original data set is not included in the bootstrapped data set.
+- This sample data set that does not include in the bootstrapped data set is known as the Out-Of-Bag (OOB) data set.
+- we can measure the accuracy of a Random Forest by the proportion of OOB samples that are correctly classified.
+- 
+#### Naive Bayes
+
+- Naive Bayes is based on the Bayes Theorem that is used to solve classification problems by following a probabilistic approach.
+- It is based on the idea that the predictor variables in a Machine Learning model are independent of each other.
+
+![Naive Bayes Equation](assets/images/naive-bayes-equation.png)
+
+- P( A|B ): Conditional probability of event A occurring, given the event B
+- P( A ): Probability of event A occurring
+- P( B ): Probability of event B occurring
+- P( B|A ): Conditional probability of event B occurring, given the event A
+
+
+![Naive Bayes Example](assets/images/naive-bayes-example.png)
+
+
+To predict whether the animal is a Cat, Parrot or a Turtle based on the defined predictor variables (swim, wings, green , sharp teeth).
+
+|             | Swim | Wings | Green | Sharp Teeth |
+| ----------- | ---- | ----- | ----- | ----------- |
+| Observation | True | False | True  | False       |
+
+To solve this, we will use the Naive Bayes Approach:
+
+![Naive Bayes Approach](assets/images/naive-bayes-approach.png)
+
+In the observation, the variables Swim and Green are true and the outcome can be any one of the animals (Cats, Parrots, Turtles).
+
+![Naive Bayes Approach](assets/images/naive-bayes-approach.png)
+
+**To check if the animals is a cat**:
+> P( Cat | Swim, Green) = P( Swim|Cat ) * P( Green|Cat ) * P( Cat ) / P(  Swim, Green )
+> = 0.9 * 0 * 0.333 / P( Swim, Green ) 
+> = 0
+
+**To check if the animals is a parrot**:
+> P( Parrot | Swim, Green) = P( Swim|Parrot ) * P( Green|Parrot ) * P( Parrot ) / P(  Swim, Green )
+> = 0.1 * 0.80 * 0.333 / P( Swim, Green ) 
+> = 0.0264 / P( Swim, Green )
+
+**To check if the animals is a Turtle**
+> P( Turtle | Swim, Green) = P( Swim|Turtle ) * P( Green|Turtle ) * P( Turtle ) / P(  Swim, Green ) 
+> = 1 * 0.2 * 0.333 / P( Swim, Green ) 
+> = 0.0666 / P( Swim, Green )
+
+
+#### K Nearest Neighbour ( KNN )
+
+K Nearest Neighbour is a Supervised Learning Algorithm that classifies a new data point into the target class, depending on the features of it's neighbouring data points
+
+![KNN-Algorithm #01](assets/images/knn-algorithm-01.png)
+
+
+![KNN Algorithm #02](assets/images/knn-algorithm-02.png)
+
+
+**Problem Statement**: Assign the new data point into one of the two clusters
+
+![KNN Algorithm #03](assets/images/knn-algorithm-03.png)
+
+
+Choose the value of 'k', here k=3 and find the 3 nearest neighbours
+
+![KNN Algorithm #04](assets/images/knn-algorithm-04.png)
+
+=> Class A or Square 
+
+Here k= 7, find the nearest neighbours
+
+![KNN Algorithm #05](assets/images/knn-algorithm-05.png)
+
+##### Euclidean Distance
+
+![KNN Algorithm #06](assets/images/knn-algorithm-06.png)
+
+#### Support Vector Machine ( SVM )
+
+Support Vector Machine ( SVM ) is a supervised classification  method that separates data using hyperplanes.
+
+- Supervised machine learning algorithm
+- Classification & Regression algorithm
+- SVM kernel functions
+
+![KNN Algorithm #07](assets/images/knn-algorithm-07.png)
+
+
+![KNN Algorithm #08](assets/images/knn-algorithm-08.png)
+
+![KNN Algorithm #09](assets/images/knn-algorithm-09.png)
+
+
+![KNN Algorithm #10](assets/images/knn-algorithm-10.png)
+
+
+![KNN Algorithm #11](assets/images/knn-algorithm-11.png)
+
+
+
+![KNN Algorithm #12](assets/images/knn-algorithm-12.png)
+
+### Unsupervised Learning Algorithms
 
 
 
