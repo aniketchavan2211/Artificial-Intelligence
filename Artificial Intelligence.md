@@ -614,7 +614,102 @@ Support Vector Machine ( SVM ) is a supervised classification  method that separ
 
 ### Unsupervised Learning Algorithms
 
+#### K-Means Clustering
 
+The process by which object are classified into a predefined number of groups in that so that they  are as much dissimilar as possible from one group to another group, but as much similar as possible within each group.
+
+![K-Means Clustering  Flowchart](assets/images/k-means-clustering-flowchart.png)
+
+![K-Means Clustering Steps](assets/images/k-means-clustering-steps.png)
+
+**The Elbow Method**:
+> First of all, compute the sum of squared error (SSE) for some values of *k* (for example 2, 4, 6, 8, etc.). The SSE is defined as the sum of the squared distance between each member of the cluster and its centroid. Mathematically:
+
+![K-Means Clustering Elbow Method](assets/images/k-means-clustering-elbow-method.png)
+
+### Reinforcement Learning 
+
+#### **Reinforcement Learning Analogy**
+
+Scenario 1: Baby starts crawling and makes it to the candy
+
+![Reinforcement Learning Baby](assets/images/reinforcement-learning-baby.png)
+
+
+Reinforcement Learning System is comprised of two main components:
+- Agent
+- Environment
+
+![Reinforcement Learning Agent Environment](assets/images/reinforcement-learning-agent-env.png)
+
+
+#### **Reinforcement Learning Example**
+
+**Counter Strike**
+
+![Reinforcement Learning Counter Strike Example](assets/images/reinforcement-learning-counter-strike-example.png)
+
+#### **Reinforcement Learning Terminologies**
+
+**Basic Terminologies in Reinforcement Learning
+
+![RL Terminologies #01](assets/images/reinforcement-learning-terminologies-01.png)
+
+![RL Terminologies](assets/images/reinforcement-learning-terminologies-02.png)
+
+#### **Reinforcement Learning Concepts**
+
+**Reward Maximization**
+
+Reward maximization theory states that, a RL agent must be trained in such a way that, he takes the best action so that the reward is maximum.
+
+![Reward Maximization](assets/images/reinforcement-learning-reward-maximization.png)
+
+**Exploration & Exploitation**
+
+**Exploitation**: is about using the already known exploited information to heighten the rewards.
+
+**Exploration**: is about exploring and capturing more information about an environment.
+
+**Markov's Decision Process**
+> The mathematical approach for mapping a solution in reinforcement learning is called Markov Decision Process (MDP).
+
+![Markov's Decision Process](assets/images/reinforcement-learning-markov-decision-process.png)
+
+The following parameters are used to attain a solution:
+- Set of actions, A
+- Set of states, S
+- Reward, R
+- Policy, 
+- Value, V
+
+![Markov Decision Process](assets/images/reinforcement-learning-markov-decision-process-02.png)
+
+### Understanding Q-Learning  
+
+
+![Q-Learning ](assets/images/q-learning.png)
+
+
+![Q-Learning #01](assets/images/q-learning-01.png)
+
+![Q-Learning #02](assets/images/q-learning-02.png)
+
+![Q-Learning #03](assets/images/q-learning-03.png)
+
+![Q-Learning #04](assets/images/q-learning-04.png)
+
+![Q-Learning #05](assets/images/q-learning-05.png)
+
+![Q-Learning #06](assets/images/q-learning-06.png)
+
+![Q-Learning #07](assets/images/q-learning-07.png)
+
+![Q-Learning #08](assets/images/q-learning-08.png)
+
+![Q-Learning #09](assets/images/q-learning-09.png)
+
+## AI vs ML vs DL
 
 ## Reference
 
