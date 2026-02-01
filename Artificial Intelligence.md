@@ -711,6 +711,217 @@ The following parameters are used to attain a solution:
 
 ## AI vs ML vs DL
 
+**Artificial Intelligence** : A technique which enables machines to mimic human behaviour.
+
+**Machine Learning** : Subset of AI technique which use statistical methods to enable machines to improve with experience.
+
+**Deep Learning** : Subset of Machine Learning which make the computation of multi-layer neural network feasible.
+
+## Limitation of Machine Learning
+
+- High Dimensional Data
+- Image Recognition
+
+One of the big challenge with traditional Machine Learning models is a process called feature extraction. For complex problem such as object recognition or handwriting recognition, this is a huge challenge.
+
+## Introduction of Deep Learning
+
+**Why Deep Learning ?**
+> Deep Learning models are capable to focus on the right feature by themselves, requiring little guidance from the programmer. These models also partially solve the dimensionality problem.
+
+![Deep Learning #01](assets/images/deep-learning-01.png)
+
+The idea behind Deep Learning is to build learning algorithms that mimic Human Brain.
+
+**How Deep Learning Work ?**
+
+Deep Learning is a form of machine learning that uses a model of computing that's very much inspired by the structure of the brain, so lets understand that first.
+
+![Biological Neuron](assets/images/deep-learning-biological-neuron-02.png)
+
+**Biological Neuron
+
+Deep Learning is a collection of statistical machine learning techniques used to learn feature hierarchies based on the concept of artificial neural networks.
+
+![Deep Learning #03](assets/images/deep-learning-03.png)
+
+**Image Recognition using Deep Learning**
+
+1. Pass the high dimensional data to the input layer.
+2. Output received from the input layer contains patterns which are extracted.
+3. Output will be fed to the Hidden Layer 1.
+4. Hidden Layer 2 will able to form the entire faces.
+5. The output layer performs classification.
+
+### Single - Layer Perceptron
+
+**A Perceptron** : An Artificial Neuron or a Perceptron is a linear model used for binary classification. It models a neuron which has a set of inputs, each of which is given a specific weight. The neuron computes some function on these weighted inputs and gives the output.
+
+![Perceptron](assets/images/deep-learning-perceptron-04.png)
+
+**Perceptron or Artificial Neuron**
+
+**Perceptron Learning Analogy**
+
+Suppose you want to go to a party happening near you house. And your decision depends on multiple factors:
+
+1. How is the weather ?
+2. Your wife is going with you ?
+3. Any public transport is available ? 
+
+![Perceptron Learning Analogy](assets/images/deep-learning-05.png)
+
+
+![Deep Learning #06](assets/images/deep-learning-06.png)
+
+*`1` means going to party & `0` means staying at home.*
+
+Suppose for you the most important factor is weather.
+Weather -> Good = Party
+Weather -> Not Good = Sit at Home
+
+![Deep Learning #07](assets/images/deep-learning-07.png)
+
+
+![Deep Learning #08](assets/images/deep-learning-08.png)
+
+### Limitations of a Perceptron
+**Dealing with non-linearly separable data** :
+
+![Deep Learning #09](assets/images/deep-learning-09.png)
+
+> A Multilayer Perceptron with backpropagation can be used to solve this problem.
+
+### Multi-layer Perceptron - Artificial Neural Network
+
+**Multi-layer  Perceptron**
+> A Multi-layer Perceptron has the same structure of a single layer perceptron but with one or more hidden layers and is thus considered a deep neural network. 
+
+![Multi-layer Perceptron](assets/images/deep-learning-10.png)
+
+- The weights between the units are the primary means of long-term information storage in neural networks.
+- Updating the weights is the primary way the neural network learns new information.
+
+![Deep Learning  #11](assets/images/deep-learning-11.png)
+
+A set of inputs are passed to the first hidden layer, the activations from that layer are passed to the next layer and so on, until you reach the output layer.
+
+The Backpropagation algorithm is a supervised learning method for Multilayer Perceptron.
+
+![backpropagation](assets/images/deep-learning-12.png)
+
+Maximum weight is assigned to the most important lead/input.
+
+### Training a Neural Network
+
+The most common deep learning algorithm for supervised training of the multi-layer perceptrons is known as *backpropagation*. After calculating the weighted sum of inputs and passing them through the activation function we propagate backwards and update the weights to reduce the error ( desired output - model output ). Consider the below example.
+
+| Input | Desired Output |
+| ----- | -------------- |
+| 0     | 0              |
+| 1     | 1              |
+| 2     | 4              |
+
+ Let's consider the initial value of the weight as 3 and see the model output:
+ 
+| Input | Desired Output | Model Output |
+| ----- | -------------- | ------------ |
+| 0     | 0              | 0            |
+| 1     | 2              | 3            |
+| 2     | 4              | 6            |
+
+Now, we will see the error ( Absolute and Square )
+
+| Input | Desired Output | Model Output (W=3) | Absolute Error | Square Error |
+| ----- | -------------- | ------------------ | -------------- | ------------ |
+| 0     | 0              | 0                  | 0              | 0            |
+| 1     | 2              | 3                  | 1              | 1            |
+| 2     | 4              | 6                  | 2              | 4            |
+
+ 
+Let's update the weight value and make it as 4
+
+
+| Input | Desired Output | Model Output (W=3) | Absolute Error | Square Error | *Model Output (W=4)* |
+| ----- | -------------- | ------------------ | -------------- | ------------ | ------------------ |
+| 0     | 0              | 0                  | 0              | 0            | *0*                  |
+| 1     | 2              | 3                  | 1              | 1            | *4*                  |
+| 2     | 4              | 6                  | 2              | 4            | *8*                  |
+Model Output (W=4) = Input x W(eight)
+
+Notice that the error has increased
+
+| Input | Desired Output | Model Output(W=3) | Absolute Error | Square Error | *Model Output (W=4)* | *Square Error* |
+| ----- | -------------- | ----------------- | -------------- | ------------ | -------------------- | -------------- |
+| 0     | 0              | 0                 | 0              | 0            | *0*                  | *0*            |
+| 1     | 2              | 3                 | 1              | 1            | *4*                  | *4*            |
+| 2     | 4              | 6                 | 2              | 4            | *8*                  | *16*           |
+
+Relationship between the assigned weight and the error
+
+![Neural Network](assets/images/neural-network-01.png)
+
+**Reducing the Error / Loss**
+
+**Step 1: Calculate the error
+
+![Neural Network #02](assets/images/neural-network-02.png)
+
+**Step 2: Calculate the rate of change of error w.r.t. change in the weights
+
+![Neural Network #03](assets/images/neural-network-03.png)
+
+**Step 3: Based on change in weight, update the weight value.
+
+![Neural Network #04](assets/images/neural-network-04.png)
+
+
+#### Limitations of Feed Forward Network
+
+A trained feed forward network can be exposed to any random collection of photographs, and the first photograph it is exposed to will not necessarily alter how it classifies the second one.
+
+![Neural Network #05](assets/images/neural-network-05.png)
+
+When you read a book, you understand it based on your understanding of previous words.
+
+![Neural Network #06](assets/images/neural-network-06.png)
+
+Solution : Neural Network that can learned from previous mistakes.
+
+![Neural Network #07](assets/images/neural-network-07.png)
+
+#### Recurrent Neural Network
+
+Recurrent Networks are a type of artificial neural network designed to recognise patterns in sequences of data, such as text, genomes, handwriting, the spoken word, or numerical times series data emanating from sensors, stock markets and government agencies.
+
+Example of Gym :
+
+![Neural Network #08](assets/images/neural-network-08.png)
+
+using Recurrent Network:
+
+![Neural Network #09](assets/images/neural-network-09.png)
+
+![Neural Network #10](assets/images/neural-network-10.png)
+
+![Neural Network #11](assets/images/neural-network-11.png)
+
+#### Convolutional Neural Network ( CNN )
+
+**Why we need CNN ?**
+
+![Neural Network #12](assets/images/neural-network-12.png)
+
+![Neural Network #13](assets/images/neural-network-13.png)
+
+**Convolutional Neural Network**
+> In case of CNN the neuron in a layer will only be connected to a small region of the layer before it, instead of all of the neurons in a fully-connected manner.
+
+![Neural Network #14](assets/images/neural-network-14.png)
+
+## Natural Language Processing ( NLP )
+
+
 ## Reference
 
 - [Artificial Intelligence Full Course | By Edureka!](https://www.youtube.com/watch?v=JMUxmLyrhSk)
