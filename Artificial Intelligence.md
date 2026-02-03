@@ -7,10 +7,10 @@
 - [Programming Languages for AI](#Programming-Languages-For-AI)
 - [Machine Learning](#Introduction-to-Machine-Learning)
 - [Machine Learning Algorithms](#Types-Of-Machine-Learning)
-- Limitations of Machine Learning
-- Deep Learning
-- Neural Networks
-- Natural Language Processing 
+- [Limitations of Machine Learning](#Limitation-of -Machine-Learning)
+- [Deep Learning](#Introduction-of-Deep-Learning)
+- [Neural Networks](#Single---Layer-Perceptron)
+- [Natural Language Processing](#Natural-Language-Processing-(-NLP-))
 
 ## History Of AI
 
@@ -920,6 +920,59 @@ using Recurrent Network:
 ![Neural Network #14](assets/images/neural-network-14.png)
 
 ## Natural Language Processing ( NLP )
+
+**Need for Text Mining & NLP**
+
+- Instagram : 1,736,111 pictures
+- X ( Twitter ) : 347,222 Tweets
+- Email : 204,000,000 emails
+- Facebook : 4,166,667 likes & 200,000 photos
+
+**What is Text Mining ?**
+> Text Mining / Text Analytics is the process of deriving meaningful information from natural language text.
+
+Text Mining is process of deriving high quality information from the text. The overall goal is, to turn text into data for analysis, via application of Natural Language Processing ( NLP ).
+
+**What is NLP ?**
+>**Natural Language Processing** is a part of computer science and artificial intelligence which deals with human languages.
+
+**Applications of NLP**
+- Auto-completion
+- Spam Detection
+- Predictive typing
+- Spell checker
+- Sentimental Analysis
+- Chatbot
+- Speech Recognition
+- Machine Translation
+- Information Extraction
+- Keyword Search
+- Advertisement Matching
+
+**Terminologies in NLP**
+
+***Tokenization*** : The process of splitting the whole data ( corpus ) into smaller chunks is known as tokenization.
+
+1. Break a complex sentence into words
+2. Understand the importance of each of the words with respect to the sentence
+3. Produce a structural description on an input sentence
+
+****Stemming*** : Normalise words into its base form or root form
+
+![NLP Stemming](assets/images/stemming.png)
+
+***Lemmitization***
+1. Groups together different inflected forms of a word, called lemma
+2. Somehow similar to Stemming, as it maps several words into one common root
+3. Output of Lemmatisation is a proper word
+4. For example, a Lemmatiser should map *gone*, *going* and *went* into **go**
+
+***Stop Words*** : unnecessary words, how, to, various, know, etc. 
+
+***Document Term Matrix*** 
+
+![Document Term Matrix](assets/images/document-term-matrix.png)
+
 
 
 ## Reference
