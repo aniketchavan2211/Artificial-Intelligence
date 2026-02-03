@@ -7,7 +7,7 @@
 - [Programming Languages for AI](#Programming-Languages-For-AI)
 - [Machine Learning](#Introduction-to-Machine-Learning)
 - [Machine Learning Algorithms](#Types-Of-Machine-Learning)
-- [Limitations of Machine Learning](#Limitation-of -Machine-Learning)
+- [Limitations of Machine Learning](#Limitation-of-Machine-Learning)
 - [Deep Learning](#Introduction-of-Deep-Learning)
 - [Neural Networks](#Single---Layer-Perceptron)
 - [Natural Language Processing](#Natural-Language-Processing-(-NLP-))
